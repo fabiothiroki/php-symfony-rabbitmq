@@ -1,6 +1,14 @@
 {
+    "name": "fabio.hiroki/php-symfony-rabbitmq",
+    "description": "Experiments using Symfony and RabbitMQ",
+    "authors": [
+        {
+            "name": "Fabio Hiroki",
+            "email": "fabiothiroki@gmail.com"
+        }
+    ],
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {

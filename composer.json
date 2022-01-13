@@ -1,6 +1,14 @@
 {
+    "name": "fabio.hiroki/php-symfony-rabbitmq",
+    "description": "Experiments using Symfony and RabbitMQ",
+    "authors": [
+        {
+            "name": "Fabio Hiroki",
+            "email": "fabiothiroki@gmail.com"
+        }
+    ],
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
@@ -47,6 +55,8 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "phpstan/phpstan": "^1.3",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "6.0.*",
         "symfony/css-selector": "6.0.*",
@@ -96,7 +106,11 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "lint": "./vendor/bin/phpstan analyse -c phpstan.neon",
+        "sniff": "./vendor/bin/php-cs-fixer fix -vvv --dry-run --show-progress=dots src",
+        "test": "./vendor/bin/phpunit tests",
+        "test-coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit tests --coverage-clover coverage/coverage.xml"
     },
     "conflict": {
         "symfony/symfony": "*"
